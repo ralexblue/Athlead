@@ -1,1 +1,12 @@
-<p>This is the partial for view 1.</p>
+<h2>athlete list</h2>
+<ul class="unstyled">
+    <li ng-repeat="athlete in athletes">
+        <h1>{{athlete.name}}</h1>
+        <h3>{{athlete.DOB}}</h3>
+        <p>{{athlete.nationality}}</p>
+        <p>{{athlete.gender}}</p>
+        <h2>what he plays</h2>
+        <p>{{athlete.sport[0]}}</p>
+        
+    </li>
+</ul>

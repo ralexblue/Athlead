@@ -1,5 +1,31 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<h2>Add a athlete</h2>
+<form name="form" class="form-horizontal">
+    <label>Name:<input type="text" ng-model="athlete.name" required=""></label>
+    <br />
+    <form class="form-horizontal">
+        <label>Add Sports</label>
+        <input type="text" ng-model="formAddSportText" ng-model-instant>
+        <button class="btn" ng-click="addSport()">add</button>
+    </form>
+    <button class="btn-large" ng-click="clearCompleted()">clear if added one wrong</button>
+    <ul class="unstyled">
+        <li ng-repeat="sport in sports">
+            <input type="checkbox" ng-model="sport.done">
+            <span>{{sport.text}}</span>
+        </li>
+    </ul>
+    
+    <br/><label>Date of birth:<input type="date" ng-model="athlete.date" required=""></label>
+    <br/><label>nationality:<input type="text" ng-model="athlete.nationality" required=""></label>
+    <br/><label>gender:<input type="text" ng-model="athlete.gender" required=""></label>
+    <br/><label>description:<input type="text" ng-model="athlete.description" ></label>
+    <br/><label>location:<input type="text" ng-model="athlete.location" ></label>
+    <br/><label>team:<input type="text" ng-model="athlete.team"></label>
+    <br/><label>insta:<input type="text" ng-model="athlete.insta"></label>
+    <br/><label>facebook:<input type="text" ng-model="athlete.facebook" ></label>
+    <br/><label>extra:<input type="text" ng-model="athlete.extra"></label>
+    <input type="button" ng-click="reset(form)" value="Reset" />
+    <input type="submit" ng-click="update(athlete)" value="Save" />
+</form>
+<pre>athlete = {{athlete | json}}</pre>
+<pre>master = {{master | json}}</pre>

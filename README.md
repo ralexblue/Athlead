@@ -37,3 +37,4 @@ git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-na
 ## AThlead client
 
 used angular seed as boilerplate:https://github.com/angular/angular-seed
+start-Time:6/21/2020 3:00 EST
