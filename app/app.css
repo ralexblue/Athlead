@@ -5,16 +5,10 @@
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
   padding: 0 0 0.5em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
 .menu > li {
   display: inline;
 }
@@ -22,4 +16,22 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+}
+
+
+.unstyled{
+list-style-type: none;
+}
+.flex{
+  display:flex;
+  justify-content: center;
+}
+.more_centered{
+  margin: auto;
+}
+.flex2{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

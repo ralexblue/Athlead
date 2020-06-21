@@ -25,10 +25,21 @@ angular.module('myApp.view2', ['ngRoute'])
    }
  //sports data
    $scope.master = {};
- 
    $scope.update = function(athlete) {
-     $scope.master = angular.copy(athlete);
+    $scope.master = angular.copy(athlete);
+    let sportslist=$scope.sports.map(function(sport){return sport.text;})
+    let newAthlete={...$scope.athlete,sport:sportslist}
+    $http.post('http://localhost:8000/athlete/add',JSON.stringify(newAthlete)).then(function (response) {
+      console.log(response.data);
+    });
    };
+   $scope.checkSport= function(){
+    let sportslist=$scope.sports.map(function(sport){return sport.text});
+    let newAthlete={...$scope.athlete,sport:sportslist}
+    console.log("ok");
+    console.log(sportslist);
+    console.log(newAthlete);
+   }
  
    $scope.reset = function(form) {
      if (form) {

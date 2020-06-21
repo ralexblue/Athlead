@@ -1,12 +1,67 @@
-<h2>athlete list</h2>
+<div class ="flex">
 <ul class="unstyled">
-    <li ng-repeat="athlete in athletes">
+    <h1 >Athlete list</h1>
+    <li ng-repeat="athlete in athletes" ng-controller="ItemController">
         <h1>{{athlete.name}}</h1>
-        <h3>{{athlete.DOB}}</h3>
-        <p>{{athlete.nationality}}</p>
-        <p>{{athlete.gender}}</p>
-        <h2>what he plays</h2>
+        <p>Nationality:{{athlete.nationality}}</p>
+        <p>Gender: {{athlete.gender}}</p>
+        <h2>What he plays</h2>
         <p>{{athlete.sport[0]}}</p>
-        
+        <p>{{athlete.sport[1]}}</p>
+        <p>{{athlete.sport[2]}}</p> <!--most likely a better way to this but dont disply if there is not -->
+        <p>{{athlete.sport[3]}}</p>
+        <button ng-click="showMore()">Show more info </button>
+        <span><button ng-click="EditAth()">edit</button></span>
+        <div ng-show="myValue">
+            <p> Date of birth: {{athlete.DOB}}</p>
+            <p>{{athlete.desciption}}</p>
+            <p>{{athlete.location}}</p>
+            <p>{{athlete.team}}</p>
+            <a href="{{athlete.insta}}">Insta</a>
+            <a href="{{athlete.facebook}}">facebook</a>
+            <a href="{{athlete.extra}}">extra</a>
+        </div>
+        <span  ng-show="myValue2">
+            <h2>edit athlete</h2>
+            <form name="form" class="form-horizontal">
+            <label>Name:<input type="text" ng-model="athlete.name" required=""></label>
+            <br />
+            <form class="form-horizontal">
+                <label>Add Sports</label>
+                <input type="text" ng-model="formAddSportText" ng-model-instant>
+                <button class="btn" ng-click="addSport()">add</button>
+            </form>
+            <button class="btn-large" ng-click="clearCompleted()">clear if added one wrong</button>
+            <ul class="unstyled">
+                <li ng-repeat="sport in sports">
+                    <input type="checkbox" ng-model="sport.done">
+                    <span>{{sport.text}}</span>
+                </li>
+            </ul>
+            
+            <br/><label>Date of birth:<input type="date" ng-model="athlete.date" required=""></label>
+            <br/><label>nationality:<input type="text" ng-model="athlete.nationality" required=""></label>
+            <br/><label>gender:<input type="text" ng-model="athlete.gender" required=""></label>
+            <br/><label>description:<input type="text" ng-model="athlete.description" ></label>
+            <br/><label>location:<input type="text" ng-model="athlete.location" ></label>
+            <br/><label>team:<input type="text" ng-model="athlete.team"></label>
+            <br/><label>insta:<input type="text" ng-model="athlete.insta"></label>
+            <br/><label>facebook:<input type="text" ng-model="athlete.facebook" ></label>
+            <br/><label>extra:<input type="text" ng-model="athlete.extra"></label>
+            <input type="submit" ng-click="update(athlete._id,athlete)" value="Save" />
+</form>
+
+
+
+
+
+
+
+        </span>
+
+
+
+
     </li>
 </ul>
+</div>

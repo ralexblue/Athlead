@@ -1,3 +1,4 @@
+<div class ="flex2">
 <h2>Add a athlete</h2>
 <form name="form" class="form-horizontal">
     <label>Name:<input type="text" ng-model="athlete.name" required=""></label>
@@ -14,7 +15,6 @@
             <span>{{sport.text}}</span>
         </li>
     </ul>
-    
     <br/><label>Date of birth:<input type="date" ng-model="athlete.date" required=""></label>
     <br/><label>nationality:<input type="text" ng-model="athlete.nationality" required=""></label>
     <br/><label>gender:<input type="text" ng-model="athlete.gender" required=""></label>
@@ -28,4 +28,4 @@
     <input type="submit" ng-click="update(athlete)" value="Save" />
 </form>
 <pre>athlete = {{athlete | json}}</pre>
-<pre>master = {{master | json}}</pre>
+</div>
